@@ -1,0 +1,49 @@
+{
+  "name": "EcoCollect — E-Waste Recycling",
+  "short_name": "EcoCollect",
+  "description": "Schedule pickups, earn Green Credits, save the planet.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0B",
+  "theme_color": "#0A0A0B",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/dashboard.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Dashboard"
+    }
+  ],
+  "categories": ["utilities", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "New Pickup",
+      "url": "/pickup",
+      "description": "Schedule an e-waste pickup",
+      "icons": [{ "src": "/icons/pickup-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "AI Scanner",
+      "url": "/scan",
+      "description": "Scan e-waste with AI",
+      "icons": [{ "src": "/icons/scan-96.png", "sizes": "96x96" }]
+    }
+  ]
+}
