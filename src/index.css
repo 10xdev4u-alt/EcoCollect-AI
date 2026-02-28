@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 6% 4%;
+    --foreground: 0 0% 96%;
+    --card: 240 5% 8%;
+    --card-foreground: 0 0% 96%;
+    --popover: 240 5% 8%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 240 4% 11%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 142 71% 45%;
+    --radius: 0.75rem;
+    --sidebar-background: 240 5% 8%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 2%;
+    --sidebar-accent: 240 4% 11%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 142 71% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-surface text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
+@layer components {
+  /* ===== GLASSMORPHISM PRIMITIVES ===== */
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.06]
+           rounded-2xl shadow-glass;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-2xl border border-white/[0.08]
+           rounded-3xl shadow-glass-lg transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply bg-white/[0.06] border-white/[0.12] shadow-glow;
+  }
+
+  .glass-button {
+    @apply bg-white/[0.06] backdrop-blur-xl border border-white/[0.1]
+           rounded-2xl px-6 py-3 text-white font-medium
+           hover:bg-white/[0.1] hover:border-white/[0.15]
+           active:scale-[0.98] transition-all duration-200;
+  }
+
+  .glass-input {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08]
+           rounded-xl px-4 py-3 text-white placeholder:text-zinc-500
+           focus:border-eco-500/50 focus:ring-2 focus:ring-eco-500/20
+           outline-none transition-all duration-200;
+  }
+
+  /* ===== ECO GRADIENT ELEMENTS ===== */
+  .eco-button {
+    @apply bg-eco-gradient text-black font-semibold rounded-2xl
+           px-6 py-3.5 shadow-glow hover:shadow-glow-lg
+           active:scale-[0.97] transition-all duration-200;
+  }
+
+  .eco-badge {
+    @apply bg-eco-500/10 text-eco-400 border border-eco-500/20
+           rounded-full px-3 py-1 text-xs font-medium;
+  }
+
+  /* ===== GLOW EFFECTS ===== */
+  .glow-dot {
+    @apply w-2 h-2 rounded-full bg-eco-500 shadow-glow animate-pulse-glow;
+  }
+
+  .text-gradient {
+    @apply bg-eco-gradient bg-clip-text text-transparent;
+  }
+
+  /* ===== SHIMMER LOADING ===== */
+  .shimmer {
+    @apply animate-shimmer bg-gradient-to-r from-transparent
+           via-white/[0.05] to-transparent bg-[length:200%_100%];
+  }
+}
+
+/* Leaflet dark map styles */
+.leaflet-container {
+  background: #1a1a1a !important;
+}
+
+/* Custom font for mono */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
